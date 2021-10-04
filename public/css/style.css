@@ -10,4 +10,6 @@ h1{
 }
 #victoryImage{
     width: 50%;
+    float: left;
+    position: static;
 }

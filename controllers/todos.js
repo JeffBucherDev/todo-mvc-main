@@ -4,12 +4,12 @@ module.exports = {
     getTodos: async (req,res)=>{ // creates an asynchronous method
         try{
             const todoItems = await Todo.find() // uses todo model to grab all documents in db and stores them in variable todoItems
-            const itemsLeft = await Todo.countDocuments({completed: false}) // uses todo model to count how many docs have a completed value of false
+            const itemsLeft = await Todo.countDocuments({completed: false}) // uses todo model to count how many docs have a completed value of false         
             if (todoItems.length === 0){
-                res.render('finished.ejs')
-            }else{
+               res.render('finished.ejs')
+           }else {
                 res.render('todos.ejs', {todos: todoItems, left: itemsLeft}) // responds after controller tells the todos to render ejs with todos and itemsleft information
-            }
+           } 
         }catch(err){
             console.log(err) // console logs any error from the above code block
         }
@@ -47,8 +47,8 @@ module.exports = {
     },
     deleteTodo: async (req, res)=>{ // creates an asychronous method
         console.log(req.body.todoIdFromJSFile)
-        try{
-            await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile}) // finds the todo from the js with a matching id in the db and deletes it
+        try{    
+            await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile}) // finds the todo from the js with a matching id in the db and deletes it 
             console.log('Deleted Todo') // informs us of the action taken in a console log
             res.json('Deleted It') // responds in json that the todo was deleted
         }catch(err){

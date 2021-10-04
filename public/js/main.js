@@ -3,6 +3,7 @@ const deleteBtn = document.querySelectorAll('.del') // targets everything that h
 const todoItem = document.querySelectorAll('span.not') // targets everything that has the span.not class in the document
 const todoComplete = document.querySelectorAll('span.completed') // targets everything that has the span.completed class in the document
 
+
 Array.from(deleteBtn).forEach((el)=>{ // converts everything from the deleteBtn nodelist, and turns it into an array
     el.addEventListener('click', deleteTodo) // adds an event listener that, upon clicks, executes the deleteTodo function
 })

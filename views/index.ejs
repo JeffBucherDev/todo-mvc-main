@@ -7,7 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Create A Todo List By Clicking The Button Below</h1>
-    <a href="/todos"> New Todo List</a>
+    <h1>Welcome! Start A Todo List Below</h1>
+    <form action="/todos/createTodo" method='POST'>
+        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="submit">
+    </form>  
+   
 </body>
 </html>
