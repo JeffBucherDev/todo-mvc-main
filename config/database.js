@@ -3,9 +3,9 @@ const mongoose = require('mongoose') // installs mongoose (front end library for
 const connectDB = async () => { // creates an asynchronous function and stores it into connectDB
   try { // trys following code block and checks for errors
     const conn = await mongoose.connect(process.env.DB_STRING, { // making a request using the mongoose connect method, accessing our db string in our env file, passing the following object. 
-      useNewUrlParser: true, // idk
-      useUnifiedTopology: true, // idk
-      useFindAndModify: false, // idk
+      useNewUrlParser: true, // used to stop warnings in the console
+      useUnifiedTopology: true, // used to stop warnings in the console
+      useFindAndModify: false, // used to stop warnings in the console
     })
 
     console.log(`MongoDB Connected: ${conn.connection.host}`) // log the connection to the console
