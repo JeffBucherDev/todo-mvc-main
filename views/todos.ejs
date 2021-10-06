@@ -10,9 +10,9 @@
 <body>
     <h1>Todos</h1>
     <ul>
-    <% todos.forEach( el => { %>
-        <li class='todoItem' data-id='<%=el._id%>'>
-            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+    <% todos.forEach( el => { %> <!-- executes forEach method on all the elements in todos -->
+        <li class='todoItem' data-id='<%=el._id%>'> <!-- sets element id to data-id -->
+            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span> <!-- if element completed is true, add completed class, otherwise add not class -->
             <span class='del'> Delete </span>
         </li>
     <% }) %>    
