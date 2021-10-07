@@ -8,7 +8,7 @@ require('dotenv').config({path: './config/.env'}) // requires the env file from 
 
 connectDB() // function call that connects to database
 
-app.set('view engine', 'ejs') // sets the displayable content to EJS
+app.set('view engine', 'ejs') // Using Template Engine, sets all the displayable content to EJS in the views folder
 app.use(express.static('public')) // express middleware that uses the public folder to serve up html/css/images to user
 app.use(express.urlencoded({ extended: true })) // middleware that allows incoming objects to be recognized as strings or arrays
 app.use(express.json()) // middleware that allows incoming request object as a JSON object
