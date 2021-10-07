@@ -5,7 +5,11 @@ module.exports = {
         try{
             const todoItems = await Todo.find() // uses todo model to grab all documents in db and stores them in variable todoItems
             const itemsLeft = await Todo.countDocuments({completed: false}) // uses todo model to count how many docs have a completed value of false
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft}) // responds after controller tells the todos to render ejs with todos and itemsleft information
+            if (todoItems.length === 0){
+                res.render('finished.ejs')
+            }else{
+                res.render('todos.ejs', {todos: todoItems, left: itemsLeft}) // responds after controller tells the todos to render ejs with todos and itemsleft information
+            }
         }catch(err){
             console.log(err) // console logs any error from the above code block
         }

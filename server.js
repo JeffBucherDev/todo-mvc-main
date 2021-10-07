@@ -4,6 +4,8 @@ const connectDB = require('./config/database') // requiring database file in con
 const homeRoutes = require('./routes/home') // requires our homeRoute from the routes folder and home.js file, which tells us which controller will handle the request
 const todoRoutes = require('./routes/todos') // requires todos route, which tells us which controller will handle that request
 
+const finishedRoutes = require('./routes/finished') //
+
 require('dotenv').config({path: './config/.env'}) // requires the env file from our config folder
 
 connectDB() // function call that connects to database
@@ -15,6 +17,8 @@ app.use(express.json()) // middleware that allows incoming request object as a J
 
 app.use('/', homeRoutes) // accessed the home route file when the home page is requested
 app.use('/todos', todoRoutes) // executes a get request to the todos Route file
+
+app.use('/finished', finishedRoutes)
  
 app.listen(process.env.PORT, ()=>{ // sets the server to listen for requests on the port established in the env file
     console.log('Server is running, you better catch it!') // message that indicates server is functioning properly
