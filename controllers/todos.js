@@ -7,7 +7,7 @@ module.exports = {
             const itemsLeft = await Todo.countDocuments({completed: false}) // uses todo model to count how many docs have a completed value of false         
             if (todoItems.length === 0){
                res.render('finished.ejs')
-           }else {
+           }else{
                 res.render('todos.ejs', {todos: todoItems, left: itemsLeft}) // responds after controller tells the todos to render ejs with todos and itemsleft information
            } 
         }catch(err){
